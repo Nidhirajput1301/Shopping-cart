@@ -13,12 +13,18 @@ export default class Product extends Component {
        <div className="card">
 
          <ProductConsumer>
-           {(value) => (<div className="img-container p-5" onclick={() => value.handleDetail(id)
+           {(value) => (
+           <div className="img-container p-5" onclick={() => value.handleDetail(id)
              }>
             <Link to="/details">
                 <img src={img} alt="product" className="card-img-top"/>
             </Link>
-            <button className="cart-btn" disabled={inCart ? true : false} onclick={()=>{ value.addToCart(id);}}
+            <button 
+              className="cart-btn" disabled={inCart ? true : false} 
+              onclick={()=>{ 
+                value.addToCart(id);
+                value.openModal(id);
+             }}
             >
                {inCart ? (<p className="text-capitalize mb-0" disabled>{" "} in cart </p>):(<i className="fas fa-cart-plus" />)}
             </button>
@@ -37,7 +43,7 @@ export default class Product extends Component {
              {price}
            </h5>
          </div>
-         
+
 
        </div>
      </ProductWrapper>
