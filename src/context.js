@@ -54,8 +54,9 @@ getItem = (id) => {
    this.setState(() => {
      return { products: tempProducts, cart: [...this.state.cart, product] };
    }, () => {
-
-   });
+      this.addTotals();
+   }
+  );
  };
 
  openModal = id => {
@@ -73,19 +74,39 @@ getItem = (id) => {
 
  increment = (id) => {
    console.log('xyz');
- }
+ };
 
 decrement = (id) => {
    console.log('xyz2');
- }
+ };
 
  removeItem = (id) => {
    console.log('xyz3');
- }
+ };
 
  clearCart = () => {
-   console.log('xyz4');
- }
+   this.setState(()=> {
+     return {cart: [] };
+   }, ()=> {
+     this.setProducts();
+     this.addTotals();
+   });
+ };
+
+ addTotals = () => {
+   let subTotal = 0;
+   this.state.cart.map(item => (subTotal += item.total));
+   const tempTax = subTotal * 0.1;
+   const tax = parseFloat(tempTax.toFixed(2));
+   const total = subTotal + tax;
+   this.setState(() => {
+     return {
+       cartSubTotal: subTotal,
+       cartTax: tax,
+       cartTotal: total
+     }
+   })
+ };
 
   render() {
     return (
