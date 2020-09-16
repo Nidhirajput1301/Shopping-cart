@@ -27,7 +27,7 @@ export default class Product extends Component {
                 value.openModal(id);
              }}
             >
-               {inCart ? (<p className="text-capitalize mb-0" disabled>{" "} in cart </p>):(<img src={cart} style={{width:"3rem", backgroundColor:"#2a2a72"}} />)}
+               {inCart ? (<p className="text-capitalize mb-0" disabled>{" "} in cart </p>):(<img src={cart} alt="cart" style={{width:"3rem", backgroundColor:"#2a2a72"}} />)}
             </button>
          </div>
             )}

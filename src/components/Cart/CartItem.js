@@ -29,7 +29,7 @@ export default function CartItem({ item, value }) {
       <div className="col-10 mx-auto col-lg-2">
         <div className="cart-icon" onClick={()=> removeItem(id)}>
           {/* <i className="fas fa-trash"></i> */}
-          <img src={trash} style={{width:"2rem"}} />
+          <img src={trash} alt="delete" style={{width:"2rem"}} />
         </div>
       </div>
       <div className="col-10 mx-auto col-lg-2">

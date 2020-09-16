@@ -25,7 +25,7 @@ const Navbar = function() {
      <Link to='/cart' className="ml-auto">
        <ButtonContainer>
          <span className="mr-2">
-           <img src={cart} style={{width:"3rem"}} />
+           <img src={cart} alt="cart" style={{width:"3rem"}} />
            {/* <i className="fas fa-cart-plus" /> */}
          </span>
          my cart
