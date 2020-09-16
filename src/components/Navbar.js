@@ -2,7 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import logo from '../logo.svg';
 import styled from 'styled-components';
-import {ButtonContainer} from './Button'; 
+import {ButtonContainer} from './Button';
+import cart from './img/cart.png'; 
 
 const Navbar = function() {
   return (
@@ -24,7 +25,8 @@ const Navbar = function() {
      <Link to='/cart' className="ml-auto">
        <ButtonContainer>
          <span className="mr-2">
-           <i className="fas fa-cart-plus" />
+           <img src={cart} style={{width:"3rem"}} />
+           {/* <i className="fas fa-cart-plus" /> */}
          </span>
          my cart
        </ButtonContainer>

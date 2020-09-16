@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {ProductConsumer} from '../context';
 import PropTypes from 'prop-types';
+import cart from './img/cart.png';
 
 export default class Product extends Component {
   
@@ -26,7 +27,7 @@ export default class Product extends Component {
                 value.openModal(id);
              }}
             >
-               {inCart ? (<p className="text-capitalize mb-0" disabled>{" "} in cart </p>):(<i className="fas fa-cart-plus" />)}
+               {inCart ? (<p className="text-capitalize mb-0" disabled>{" "} in cart </p>):(<img src={cart} style={{width:"3rem", backgroundColor:"#2a2a72"}} />)}
             </button>
          </div>
             )}
@@ -95,7 +96,7 @@ const ProductWrapper = styled.div`
     bottom: 0;
     right: 0;
     padding: 0.2rem 0.4rem;
-    background: var(--lightBlue);
+    background: var(--mainBlue);
     border: none;
     color: var(--mainWhite);
     font-size: 1.4rem;
